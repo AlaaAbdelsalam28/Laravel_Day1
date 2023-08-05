@@ -17,12 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/order-pizzas', function () {
-    $pizza = "Order Pizza";
-    return view('dashboard', compact('pizza'));
-});
 
-Route::get('pizzas', function () {
+
+Route::get('menu', function () {
     $title ="Pizza Menu";
     $menu = [
         [
@@ -77,6 +74,11 @@ Route::get('pizzas', function () {
         ],
     ];
    
-    return view('pizzas', ["title" => $title , "menu" => $menu]);
+    return view('menus', ["title" => $title , "menu" => $menu]);
 });
 
+
+Route::get('pizza', function () {
+    $pizano = "Order pizza";
+    return view('pizzas', ['pizano' => $pizano]);
+});

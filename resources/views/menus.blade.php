@@ -1,7 +1,9 @@
-
-
-
-    <h1>{{ $title }}</h1>
+@extends('dashboard')
+@section('title')
+    menu
+@endsection
+@section('content')
+   <h1>{{ $title }}</h1>
     @isset($menu)
     <table class="table">
     <thead>
@@ -22,4 +24,5 @@
     </tbody>
 </table>
 @endisset
+@endsection
 
