@@ -24,54 +24,23 @@ Route::get('menu', function () {
     $menu = [
         [
             "name" => "Cheese Pizza",
+            "extra" => "Cheese",
+            "size"=>"small",
             "price" => 50,
-            "size"=>"small"
         ],
         [
             "name" => "Pepperoni Pizza",
-            "price" => 60,
-            "size"=>"medium"
+            "extra" => "mushroom",
+            "size"=>"medium",
+            "price" => 60
         ],
         [
             "name" => "Meat Pizza",
+            "extra" => "onion",
+            "size"=>"medium",
             "price" => 70,
-            "size"=>"medium"
         ],
-        [
-            "name" => "Margherita Pizza",
-            "price" => 60,
-            "size"=>"medium"
-        ],
-        [
-            "name" => "BBQ Chicken Pizza",
-            "price" => 80,
-            "size"=>"small"
-        ],
-        [
-            "name" => "Buffalo Pizza",
-            "price" => 120,
-            "size"=>"large"
-        ],
-        [
-            "name" => "California Pizza",
-            "price" => 90,
-            "size"=>"medium"
-        ],
-        [
-            "name" => "Greek Pizza",
-            "price" => 150,
-            "size"=>"medium"
-        ],
-        [
-            "name" => "Pizza Crust",
-            "price" => 100,
-            "size"=>"medium"
-        ],
-        [
-            "name" => "Hawaiian Pizza",
-            "price" => 170,
-            "size"=>"large"
-        ],
+       
     ];
    
     return view('menus', ["title" => $title , "menu" => $menu]);
