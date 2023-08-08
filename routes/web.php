@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\pizzas;
+use Illuminate\Http\Request;
+use App\Http\Controllers\pizzasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,37 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('menus', [pizzasController::class, 'index'])->name('menus.index');
 
-
-Route::get('menu', function () {
-    $title ="Pizza Menu";
-    $menu = [
-        [
-            "name" => "Cheese Pizza",
-            "extra" => "Cheese",
-            "size"=>"small",
-            "price" => 50,
-        ],
-        [
-            "name" => "Pepperoni Pizza",
-            "extra" => "mushroom",
-            "size"=>"medium",
-            "price" => 60
-        ],
-        [
-            "name" => "Meat Pizza",
-            "extra" => "onion",
-            "size"=>"medium",
-            "price" => 70,
-        ],
-       
-    ];
+Route::Post('menus', [pizzasController::class,'store'])->name('menus.store');
+    // dd($request);
+   // dd($request ->extra);
    
-    return view('menus', ["title" => $title , "menu" => $menu]);
-});
-
-
-Route::get('pizza', function () {
-    $pizano = "Order pizza";
-    return view('pizzas', ['pizano' => $pizano]);
-});
+   //return redirect('/menu');
+Route::get('menus/pizzas',[pizzasController::class,'create'] );
+Route::get('menus/{menu}' , [pizzasController::class,'show'])->name('menus.show');
+Route::delete('menus/{menu}',[pizzasController::class,'destroy'])->name('menus.destroy');
+Route::get('menus/{menu}/edit', [pizzasController::class, 'edit'])->name('menus.edit');
+Route::put('menus/{menu}', [pizzasController::class, 'update'])->name('menus.update');

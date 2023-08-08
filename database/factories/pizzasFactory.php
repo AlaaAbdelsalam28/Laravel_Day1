@@ -20,7 +20,7 @@ class pizzasFactory extends Factory
             "pizza-name"=>fake()->unique()->words(2, true),
             "extra"=>fake()->sentence($nbwords=4 , $variableNbwords=true),
             "size"=>fake()->randomElement(['Small', 'Medium', 'Large','X-Large']),
-            "price" => fake()->numberBetween(50, 320),
+            "price" => fake()->numberBetween(50, 300),
             "pic"=>fake()->imageUrl()
         ];
     }
