@@ -36,7 +36,7 @@
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger"
-            onclick="return confirm('Are you sure you want to delete this book?')">Delete</button>
+            onclick="return confirm('Are you sure you want to delete this pizza?')">Delete</button>
                 </form>
             </td>
 
@@ -44,7 +44,7 @@
             <form action="{{ route('menus.edit' ,$pizza->id) }}" method="GET">
             @csrf
             <button type="submit" class="btn btn-danger"
-            onclick="return confirm('Are you sure you want to edit this book?')">Edit</button>
+            onclick="return confirm('Are you sure you want to edit this pizza?')">Edit</button>
                 </form>
             </td>
         </tr>
